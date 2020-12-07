@@ -165,6 +165,7 @@ public class UploadWorker extends ListenableWorker implements CountProgressListe
         
          Log.d(TAG, mimeType);
          Log.d(TAG, item.getPath());
+        Log.d(TAG, contentType);
         innerRequestBody = RequestBody.create(file, contentType);
       } else {
         MultipartBody.Builder formRequestBuilder = prepareRequest(parameters, null);
@@ -236,8 +237,8 @@ public class UploadWorker extends ListenableWorker implements CountProgressListe
       }
 
       Log.d(TAG, "Start uploading for " + tag);
-
-      OkHttpClient client =
+      Log.d(TAG, request);
+            OkHttpClient client =
           new OkHttpClient.Builder()
               .connectTimeout((long) timeout, TimeUnit.SECONDS)
               .writeTimeout((long) timeout, TimeUnit.SECONDS)
