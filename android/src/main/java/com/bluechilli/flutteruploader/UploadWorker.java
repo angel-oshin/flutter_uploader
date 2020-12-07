@@ -246,10 +246,6 @@ public class UploadWorker extends ListenableWorker implements CountProgressListe
               .build();
 
       call = client.newCall(request);
-      
-      
-    String client = request.getRemoteAddr();
-
       Response response = call.execute();
       statusCode = response.code();
       Headers rheaders = response.headers();
