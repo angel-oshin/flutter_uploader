@@ -237,7 +237,7 @@ public class UploadWorker extends ListenableWorker implements CountProgressListe
       }
 
       Log.d(TAG, "Start uploading for " + tag);
-      Log.d(TAG, request);
+
             OkHttpClient client =
           new OkHttpClient.Builder()
               .connectTimeout((long) timeout, TimeUnit.SECONDS)
