@@ -161,9 +161,10 @@ public class UploadWorker extends ListenableWorker implements CountProgressListe
          String mimeType = GetMimeType(item.getPath());
       
 
-        MediaType contentType = MediaType.parse("video/mp4");
+        MediaType contentType = MediaType.parse(mimeType);
         
-       
+         Log.d(TAG, mimeType);
+         Log.d(TAG, item.getPath());
         innerRequestBody = RequestBody.create(file, contentType);
       } else {
         MultipartBody.Builder formRequestBuilder = prepareRequest(parameters, null);
