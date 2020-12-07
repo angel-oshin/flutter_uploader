@@ -163,9 +163,6 @@ public class UploadWorker extends ListenableWorker implements CountProgressListe
 
         MediaType contentType = MediaType.parse(mimeType);
         
-         Log.d(TAG, mimeType);
-         Log.d(TAG, item.getPath());
-
         innerRequestBody = RequestBody.create(file, contentType);
       } else {
         MultipartBody.Builder formRequestBuilder = prepareRequest(parameters, null);
@@ -402,8 +399,8 @@ public class UploadWorker extends ListenableWorker implements CountProgressListe
   }
 
   private String GetMimeType(String url) {
-    //String type = "application/octet-stream";
-    String type = "*/*";
+    String type = "application/octet-stream";
+   
   
     String extension = MimeTypeMap.getFileExtensionFromUrl(url);
     try {
@@ -418,7 +415,7 @@ public class UploadWorker extends ListenableWorker implements CountProgressListe
       Log.d(TAG, "UploadWorker - GetMimeType", ex);
     }
     
-    Log.d(TAG, "Angel: " + type);
+
 
     return type;
   }
