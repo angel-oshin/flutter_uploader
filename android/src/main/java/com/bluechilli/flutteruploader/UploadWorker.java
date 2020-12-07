@@ -163,10 +163,7 @@ public class UploadWorker extends ListenableWorker implements CountProgressListe
 
         MediaType contentType = MediaType.parse("video/mp4");
         
-        Log.d("Angel", contentType);
-        Log.d("Angel",headersJson);
-        Log.d("Angel",headers);
-        Log.d("Angel",mimeType);
+       
         innerRequestBody = RequestBody.create(file, contentType);
       } else {
         MultipartBody.Builder formRequestBuilder = prepareRequest(parameters, null);
