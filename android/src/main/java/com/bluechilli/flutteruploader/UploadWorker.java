@@ -165,7 +165,7 @@ public class UploadWorker extends ListenableWorker implements CountProgressListe
         
          Log.d(TAG, mimeType);
          Log.d(TAG, item.getPath());
-        Log.d(TAG, contentType);
+
         innerRequestBody = RequestBody.create(file, contentType);
       } else {
         MultipartBody.Builder formRequestBuilder = prepareRequest(parameters, null);
